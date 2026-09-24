@@ -1,0 +1,30 @@
+{
+  "project": "多业态保供指挥台",
+  "entities": [
+    "business_line",
+    "snapshot",
+    "metric_window",
+    "alert",
+    "incident"
+  ],
+  "states": [
+    "observing",
+    "alerted",
+    "assigned",
+    "escalated",
+    "suppressed",
+    "resolved",
+    "corrected"
+  ],
+  "event_types": [
+    "snapshot.received",
+    "window.calculated",
+    "alert.opened",
+    "incident.assigned",
+    "incident.resolved"
+  ],
+  "time_policy": "ISO 8601 with timezone",
+  "identifier_policy": "业务标识在同一类型内唯一",
+  "version_policy": "发布后的规则以新版本追加"
+}
+

@@ -1,0 +1,10 @@
+[project]
+name = "ccusr-supply-command"
+version = "0.1.0"
+description = "多业态快照、窗口指标、告警和处置单的领域资料"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"
+
