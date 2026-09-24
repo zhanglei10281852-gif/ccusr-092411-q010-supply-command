@@ -2,10 +2,13 @@
   "project": "多业态保供指挥台",
   "entities": [
     "business_line",
+    "category_rule",
     "snapshot",
     "metric_window",
     "alert",
-    "incident"
+    "incident",
+    "daily_report",
+    "actor"
   ],
   "states": [
     "observing",
@@ -14,17 +17,35 @@
     "escalated",
     "suppressed",
     "resolved",
-    "corrected"
+    "corrected",
+    "open",
+    "handled",
+    "amended"
   ],
   "event_types": [
     "snapshot.received",
+    "snapshot.version_published",
     "window.calculated",
+    "window.recalculated",
+    "window.missing",
     "alert.opened",
+    "alert.merged",
+    "alert.escalated",
+    "alert.transferred",
+    "alert.suppressed",
+    "alert.resolved",
+    "alert.corrected",
     "incident.assigned",
-    "incident.resolved"
+    "incident.resolved",
+    "incident.amended",
+    "daily_report.published",
+    "daily_report.reconciled",
+    "whatif.scenario_applied"
   ],
   "time_policy": "ISO 8601 with timezone",
-  "identifier_policy": "业务标识在同一类型内唯一",
-  "version_policy": "发布后的规则以新版本追加"
+  "identifier_policy": "业务标识在同一类型内唯一；事件编号与幂等键全局唯一",
+  "version_policy": "发布后的规则以新版本追加；迟到数据以新版本快照与窗口修正版追加，不覆盖历史",
+  "dual_time_policy": "occurred_at 为业务发生时间，recorded_at 为系统接收时间；二者之差即数据延迟",
+  "quality_policy": "ok | late（迟到，可校正历史） | missing（到期无数据） | anomaly（数据按时且真实越线）",
+  "control_policy": "升级/抑制/解除/修正需双人复核且角色合规；班次转交只追加唯一责任链；重复上报与重复派单幂等"
 }
-

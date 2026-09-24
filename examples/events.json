@@ -2,19 +2,61 @@
   {
     "event_id": "evt-001",
     "event_type": "snapshot.received",
-    "aggregate_id": "snapshot-fruit-001",
-    "occurred_at": "2026-09-21T08:00:00+08:00"
+    "aggregate_id": "snapshot:aquatic:fish:A",
+    "occurred_at": "2026-09-23T20:00:00+08:00"
   },
   {
     "event_id": "evt-002",
     "event_type": "window.calculated",
-    "aggregate_id": "window-10m-001",
-    "occurred_at": "2026-09-22T09:00:00+08:00"
+    "aggregate_id": "window:aquatic:fish:A:20260923T2000",
+    "occurred_at": "2026-09-23T20:30:00+08:00"
   },
   {
     "event_id": "evt-003",
     "event_type": "alert.opened",
-    "aggregate_id": "alert-001",
-    "occurred_at": "2026-09-23T10:00:00+08:00"
+    "aggregate_id": "alert:aquatic:fish:A:20260923T2036",
+    "occurred_at": "2026-09-23T20:36:00+08:00"
+  },
+  {
+    "event_id": "evt-004",
+    "event_type": "incident.assigned",
+    "aggregate_id": "incident:aquatic:fish:A:20260923T2140",
+    "occurred_at": "2026-09-23T21:40:00+08:00"
+  },
+  {
+    "event_id": "evt-005",
+    "event_type": "window.missing",
+    "aggregate_id": "window:aquatic:fish:A:20260923T2200",
+    "occurred_at": "2026-09-23T22:30:00+08:00"
+  },
+  {
+    "event_id": "evt-006",
+    "event_type": "alert.resolved",
+    "aggregate_id": "alert:aquatic:fish:A:20260923T2036",
+    "occurred_at": "2026-09-23T23:00:00+08:00"
+  },
+  {
+    "event_id": "evt-007",
+    "event_type": "window.recalculated",
+    "aggregate_id": "window:aquatic:fish:A:20260923T2200",
+    "occurred_at": "2026-09-23T23:30:00+08:00"
+  },
+  {
+    "event_id": "evt-008",
+    "event_type": "alert.corrected",
+    "aggregate_id": "alert:aquatic:fish:A:20260923T2036",
+    "occurred_at": "2026-09-24T08:30:00+08:00"
+  },
+  {
+    "event_id": "evt-009",
+    "event_type": "incident.amended",
+    "aggregate_id": "incident:aquatic:fish:A:20260923T2140",
+    "occurred_at": "2026-09-24T08:30:00+08:00"
+  },
+  {
+    "event_id": "evt-010",
+    "event_type": "daily_report.published",
+    "aggregate_id": "daily:2026-09-24",
+    "occurred_at": "2026-09-24T23:59:00+08:00"
   }
 ]

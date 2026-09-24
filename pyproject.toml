@@ -1,7 +1,7 @@
 [project]
 name = "ccusr-supply-command"
 version = "0.1.0"
-description = "多业态快照、窗口指标、告警和处置单的领域资料"
+description = "多业态保供指挥后端：带版本快照、窗口指标、双时态时间线、告警工作流与处置单核对"
 requires-python = ">=3.11"
 dependencies = []
 
