@@ -2,10 +2,17 @@
   "project": "多业态保供指挥台",
   "entities": [
     "business_line",
+    "region",
+    "operator",
+    "shift",
     "snapshot",
+    "business_event",
     "metric_window",
     "alert",
-    "incident"
+    "incident",
+    "dispatch_order",
+    "daily_report",
+    "rule_version"
   ],
   "states": [
     "observing",
@@ -18,13 +25,30 @@
   ],
   "event_types": [
     "snapshot.received",
+    "business_event.received",
     "window.calculated",
+    "rule.published",
     "alert.opened",
+    "alert.merged",
+    "alert.escalated",
+    "alert.assigned",
+    "alert.transferred",
+    "alert.suppressed",
+    "alert.resolved",
+    "alert.corrected",
     "incident.assigned",
-    "incident.resolved"
+    "incident.transferred",
+    "incident.resolved",
+    "incident.corrected",
+    "dispatch.sent",
+    "shift.opened",
+    "shift.handed_over",
+    "report.published"
   ],
   "time_policy": "ISO 8601 with timezone",
-  "identifier_policy": "业务标识在同一类型内唯一",
-  "version_policy": "发布后的规则以新版本追加"
+  "bitemporal_policy": "每条事实同时记录业务时间 occurred_at 与入库时间 recorded_at；迟到事实修正当前视图，历史视图按 recorded_at 截止回放",
+  "identifier_policy": "业务标识在同一类型内唯一；幂等键重复上报不新增事件",
+  "version_policy": "发布后的规则以新版本追加；窗口与处置单的判断只追加新版本，永不覆盖",
+  "review_policy": "合并、抑制、解除需双人复核：申请人与复核人不得为同一人，复核人须具备 commander 角色",
+  "responsibility_policy": "处置单责任人在同一时刻唯一；班次交接只追加责任链，不改变历史链节"
 }
-

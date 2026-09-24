@@ -2,19 +2,41 @@
   {
     "event_id": "evt-001",
     "event_type": "snapshot.received",
-    "aggregate_id": "snapshot-fruit-001",
-    "occurred_at": "2026-09-21T08:00:00+08:00"
+    "aggregate_id": "snapshot-aquatic-east-fish-0300",
+    "occurred_at": "2026-09-23T03:00:00+08:00",
+    "recorded_at": "2026-09-23T08:31:00+08:00",
+    "note": "凌晨 3 点的水产快照迟到 5 小时以上"
   },
   {
     "event_id": "evt-002",
     "event_type": "window.calculated",
-    "aggregate_id": "window-10m-001",
-    "occurred_at": "2026-09-22T09:00:00+08:00"
+    "aggregate_id": "window-aquatic-east-fish-0300-v2",
+    "occurred_at": "2026-09-23T04:00:00+08:00",
+    "recorded_at": "2026-09-23T08:31:00+08:00",
+    "note": "迟到快照触发窗口重算，缺失被更正为真实供应异常"
   },
   {
     "event_id": "evt-003",
-    "event_type": "alert.opened",
-    "aggregate_id": "alert-001",
-    "occurred_at": "2026-09-23T10:00:00+08:00"
+    "event_type": "alert.resolved",
+    "aggregate_id": "alert-window-aquatic-east-fish-20260923T03",
+    "occurred_at": "2026-09-23T04:40:00+08:00",
+    "recorded_at": "2026-09-23T04:40:00+08:00",
+    "note": "夜班解除告警，冻结当时证据；早班可按该时刻回放还原依据"
+  },
+  {
+    "event_id": "evt-004",
+    "event_type": "report.published",
+    "aggregate_id": "daily-report-2026-09-23-night",
+    "occurred_at": "2026-09-23T08:00:00+08:00",
+    "recorded_at": "2026-09-23T08:00:00+08:00",
+    "note": "夜班日报按 08:00 前入库数据签发，之后可逐项核对"
+  },
+  {
+    "event_id": "evt-005",
+    "event_type": "incident.corrected",
+    "aggregate_id": "incident-alert-window-aquatic-east-fish-20260923T03",
+    "occurred_at": "2026-09-23T08:31:00+08:00",
+    "recorded_at": "2026-09-23T08:31:00+08:00",
+    "note": "原处置单判断保留，追加迟到数据确认的红色异常修正"
   }
 ]
